@@ -1,0 +1,15 @@
+# Нууц тохиргоо — хэзээ ч git-д оруулахгүй
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+
+# Систем
+.DS_Store
+
+# Тестийн кэш
+.pytest_cache/

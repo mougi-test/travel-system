@@ -1,0 +1,15 @@
+# Image-д орох ёсгүй зүйлс
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+tests/
+requirements-dev.txt
+.git/
+.DS_Store
+Dockerfile
+.dockerignore

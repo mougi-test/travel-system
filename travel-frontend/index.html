@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Аяллын систем</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 1. Нэвтрэх хуудас -->
+  <section id="login-view" class="login-view">
+    <form id="login-form" class="card login-card" novalidate>
+      <h1>Админ нэвтрэх</h1>
+      <p class="muted">Аяллын системийн удирдлага</p>
+
+      <label for="email">Имэйл</label>
+      <input id="email" name="email" type="email" autocomplete="username" required>
+
+      <label for="password">Нууц үг</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" required>
+
+      <p id="login-error" class="error" role="alert" hidden></p>
+
+      <button id="login-btn" type="submit">Нэвтрэх</button>
+    </form>
+  </section>
+
+  <!-- 2. Нэвтэрсний дараах хэсэг: зүүн цэс + агуулга -->
+  <div id="app-view" class="layout" hidden>
+    <aside class="sidebar">
+      <div class="brand">Аяллын систем</div>
+      <nav id="menu" aria-label="Үндсэн цэс"></nav>
+      <div class="sidebar-foot">
+        <span id="who" class="who"></span>
+        <button id="logout-btn" class="secondary" type="button">Гарах</button>
+      </div>
+    </aside>
+
+    <main id="content" class="content" tabindex="-1"></main>
+  </div>
+
+  <!-- Нэмэх/засах цонх (бүх CRUD хуудас дундаа ашиглана) -->
+  <dialog id="form-dialog" class="dialog" aria-labelledby="form-title">
+    <form id="crud-form">
+      <h2 id="form-title"></h2>
+      <div id="form-fields" class="form-grid"></div>
+      <p id="form-error" class="error" role="alert" hidden></p>
+      <div class="dialog-actions">
+        <button type="button" class="secondary" data-close>Болих</button>
+        <button type="submit" id="form-submit">Хадгалах</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Устгахаас өмнө асуух цонх -->
+  <dialog id="confirm-dialog" class="dialog dialog-sm" aria-labelledby="confirm-title">
+    <h2 id="confirm-title">Устгах уу?</h2>
+    <p id="confirm-text"></p>
+    <p id="confirm-error" class="error" role="alert" hidden></p>
+    <div class="dialog-actions">
+      <button type="button" class="secondary" data-close id="confirm-cancel">Болих</button>
+      <button type="button" class="danger" id="confirm-ok">Устгах</button>
+    </div>
+  </dialog>
+
+  <!-- Богино мэдэгдэл: «Аялал нэмэгдлээ» гэх мэт -->
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <!-- config.js эхэлж ачаалагдаж API_URL-ийг өгнө -->
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
